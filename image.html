@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📚 My UPSC Image Vault</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 2rem;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .tab-button {
+      padding: 0.5rem 1rem;
+      background-color: #ff9800;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .tab-button.active {
+      background-color: #e65100;
+    }
+
+    .gallery {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .gallery.active {
+      display: flex;
+    }
+
+    .gallery img {
+      width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      border: 4px solid #ff9800;
+    }
+  </style>
+</head>
+<body>
+  <h1>📚 My UPSC Image Vault</h1>
+  <p>Symbolic snapshots, memory palace visuals, and cinematic notes</p>
+
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab('geography')">Geography</button>
+    <button class="tab-button" onclick="showTab('history')">History</button>
+    <button class="tab-button" onclick="showTab('economics')">Economics</button>
+  </div>
+
+  <div id="geography" class="gallery active">
+    <img src="https://drive.google.com/thumbnail?id=19wLzE-hgsHYFuOmJm4y9i9nFSZKuB5wd&sz=w1000" alt="Geography Note 1" />
+    <!-- Add more Geography images here -->
+  </div>
+
+  <div id="history" class="gallery">
+    <img src="https://drive.google.com/thumbnail?id=YOUR_HISTORY_IMAGE_ID&sz=w1000" alt="History Note 1" />
+  </div>
+
+  <div id="economics" class="gallery">
+    <img src="https://drive.google.com/thumbnail?id=YOUR_ECON_IMAGE_ID&sz=w1000" alt="Economics Note 1" />
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      const galleries = document.querySelectorAll('.gallery');
+      const buttons = document.querySelectorAll('.tab-button');
+      galleries.forEach(g => g.classList.remove('active'));
+      buttons.forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
